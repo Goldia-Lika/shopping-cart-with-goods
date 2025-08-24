@@ -1,21 +1,23 @@
 import {Sidebar} from './components/sidebar.js'
-import { addProductToPage } from './handlers.js'
-import { loadJSON } from './api.js'
-import { Notification } from './components/notification.js'
+import { getProducts } from './api.js'
+import { generateTemplate } from './card.js'
+import { SELECTORS } from './selectors.js'
+import { createNewProduct } from './handlers.js'
 
 
+  window.addEventListener('DOMContentLoaded', async () => {
+    //получение продуктов
+    const products = await getProducts()
+    console.log('products', products)
 
+    // формирование шаблона
+  generateTemplate(products, null, SELECTORS?.productsList)
+  
+  // вызываем сайдбар
+  new Sidebar('#sidebar', '#sidebar-open')
+  // активируем обработчик формы добавления товара
+  createNewProduct()
 
-
-
-
-
-  // подгрузка данных при загрузке страницы
-  window.addEventListener('DOMContentLoaded', () => {
-    loadJSON()
-    addProductToPage()
-    // ToDo: Должен уметь показываться/скрываться программно
-    new Sidebar('#sidebar', '#sidebar-open')
   })
 
 
