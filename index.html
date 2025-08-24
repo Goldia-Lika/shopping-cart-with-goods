@@ -17,19 +17,13 @@
                 <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
             </a>
             <div class="flex items-center lg:order-2">
-                <button type="button" class="text-gray-900 bg-white border
-                 border-gray-300 focus:outline-none
-                  hover:bg-gray-100 focus:ring-4
-                   focus:ring-gray-100 font-medium rounded-lg 
-                   text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800
-                    dark:text-white dark:border-gray-600
-                     dark:hover:bg-gray-700 dark:hover:border-gray-600
-                      dark:focus:ring-gray-700">Sign in</button>
-                <button type="button" class="text-white bg-blue-700
-                 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 
-                 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2
-                  dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none
-                   dark:focus:ring-blue-800">Sign up</button>
+                                <button type="button" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 w-[140px] h-[44px] me-2 mb-2 align-top dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Sign in</button>
+                                <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 w-[140px] h-[44px] me-2 mb-2 align-top dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Sign up</button>
+                                <button id="basket-sidebar" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 w-[80px] h-[44px] me-2 mb-2 align-top text-center inline-flex items-center justify-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                    <svg class="w-3.5 h-3.5 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 21">
+                                        <path d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z"/>
+                                    </svg>
+                                </button>
                 
             </div>
             <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
@@ -63,105 +57,84 @@
    focus:ring-lime-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-6
     dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none
      dark:focus:ring-blue-800">Open sidebar</button>
+     
 </div>
 <section class="products">
   <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-    <div class="products-list flex flex-wrap justify-between items-center mx-auto">
-      <!-- карточки рисуются здесь -->
+        <div class="products-list flex flex-wrap justify-between items-center mx-auto">
+        <!-- карточки рисуются здесь -->
+    </div>
+    
+  </div>
+</section>
+
+<section class="products-basket">
+  <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+    <div id="basket-list" class="products-list flex flex-wrap justify-between items-center mx-auto">
+      <h2 class="text-4xl">Корзина товаров</h2>
+      <!-- корзина товаров рисуем здесь -->
     </div>
   </div>
 </section>
 </main>
-<!-- Сайдбар для создания продуктов  -->
+
+    <!-- Сайдбар для создания продуктов  -->
     <dialog class="sidebar" id="sidebar">
       <div class="sidebar-wrapper">
         <header class="flex justify-end">
-        <button type="button" id="close-sidebar" data-drawer-hide="drawer-example" aria-controls="drawer-example" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white" >
-      <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-      </svg>
-      <span class="sr-only">Close menu</span>
-   </button>
+          <button type="button" id="close-sidebar" data-drawer-hide="drawer-example" aria-controls="drawer-example" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white" >
+            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+            </svg>
+            <span class="sr-only">Close menu</span>
+         </button>
         </header>
-        <!-- форма для создания товара -->
-         <section class="bg-white dark:bg-gray-900">
-  <div class="py-4 px-4 mx-auto max-w-2xl ">
-      <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add a new product</h2>
-      <form action="#" id="add-form">
-          <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
-              <div class="sm:col-span-2">
-                  <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Name</label>
-                  <input type="text" name="name" id="name" 
-                  class="bg-gray-50 border border-gray-300 text-gray-900 
-                  text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 
-                  block w-full p-2.5 dark:bg-gray-700
-                   dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
-                    dark:focus:ring-primary-500 
-                    dark:focus:border-primary-500" placeholder="Type product name" required=""  autocomplete="off">
-              </div>
-              <div class="w-full">
-                  <label for="rating" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Rating</label>
-                  <input type="text" name="rating" id="rating" class="bg-gray-50 border border-gray-300
-                   text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 
-                   block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 
-                   dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                    placeholder="Product rating" autocomplete="off" required="">
-              </div>
-              <div class="w-full">
-                  <label for="price" class="block mb-2 text-sm font-medium text-gray-900 
-                  dark:text-white">Price</label>
-                  <input type="number" name="price" id="price" class="bg-gray-50 
-                  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 
-                  focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600
-                   dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500
-                    dark:focus:border-primary-500"  autocomplete="off" placeholder="$2999" required="">
-              </div>
-              <div class="w-full">
-                  <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Category</label>
-                  <select id="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
-                      <option selected="">Select category</option>
-                      <option value="tv">TV/Monitors</option>
-                      <option value="pc">PC</option>
-                      <option value="ga">Gaming/Console</option>
-                      <option value="ph">Phones</option>
-                  </select>
-              </div>
-              <div class="w-full">
-               <label for="description" class="block mb-2 text-sm font-medium text-gray-900
-                dark:text-white">Image url</label>
-                  <input type="url" name="imgSrc" id="imgSrc" class="bg-gray-50 border
-                   border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 
-                   focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700
-                    dark:border-gray-600 dark:placeholder-gray-400
-                     dark:text-white dark:focus:ring-primary-500
-                      dark:focus:border-primary-500" placeholder="Image url" required=""
-                       autocomplete="off">
-              </div>
-              
-              <div class="sm:col-span-2 mb-4">
-                  <label for="description" class="block mb-2 text-sm font-medium
-                   text-gray-900 dark:text-white">Description</label>
-                  <textarea id="description" rows="8" class="block p-2.5 w-full text-sm
-                   text-gray-900 bg-gray-50 rounded-lg border
-                    border-gray-300 focus:ring-primary-500 focus:border-primary-500
-                     dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400
-                      dark:text-white dark:focus:ring-primary-500 
-                      dark:focus:border-primary-500" placeholder="Your description here" autocomplete="off"></textarea>
-              </div>
-              
+        <!-- Форма для создания товара  -->
+        <section class="bg-white dark:bg-gray-900">
+          <div class="py-4 px-4 mx-auto max-w-2xl ">
+              <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add a new product</h2>
+              <form action="" id="add-form">
+                  <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
+                      <div class="sm:col-span-2">
+                          <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Name</label>
+                          <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type product name" required="" autocomplete="off">
+                      </div>
+                      <div class="w-full">
+                          <label for="rating" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Rating</label>
+                          <input type="text" name="rating" id="rating" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Product rating" autocomplete="off" required="">
+                      </div>
+                      <div class="w-full">
+                          <label for="price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Price</label>
+                          <input type="number" name="price" id="price" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" autocomplete="off" placeholder="$2999" required="">
+                      </div>
+                      <div class="w-full">
+                          <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Category</label>
+                          <select id="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" autocomplete="off">
+                              <option selected="">Select category</option>
+                              <option value="tv">TV/Monitors</option>
+                              <option value="pc">PC</option>
+                              <option value="ga">Gaming/Console</option>
+                              <option value="ph">Phones</option>
+                          </select>
+                      </div>
+                      <div class="w-full">
+                        <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Image url</label>
+                        <input type="url" name="imgSrc" id="imgSrc" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Image url" required="" autocomplete="off">
+                      </div>
+                      <div class="sm:col-span-2 mb-4">
+                          <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
+                          <textarea id="description" rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Your description here" autocomplete="off"></textarea>
+                      </div>
+                  </div>
+                  <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                      Add product
+                  </button>
+              </form>
           </div>
-          <button class="text-white bg-lime-700
-             hover:bg-lime-600 focus:ring-4 focus:outline-none
-              focus:ring-lime-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center
-               dark:bg-blue-600 dark:hover:bg-blue-700
-                dark:focus:ring-blue-800">
-              Add product
-          </button>
-      </form>
-  </div>
-</section>
-        </div>
-        </dialog>
+        </section>
+      </div>
+    </dialog>
+
     <script type="module" src="src/js/script.js"></script>
     <script src="src/js/counter.js"></script>
   </body>

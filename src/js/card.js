@@ -1,3 +1,4 @@
+
 /**
  * Универсальная функция для генерации и вставки HTML шаблона карточки товара
  * Используется на главной странице и в корзине
@@ -29,7 +30,7 @@ export const generateTemplate = (products, defaultImgFile, container) => {
             const currentImgFile = images[idx] ? images[idx] : images[images.length - 1];
             
             template += `
-<div class="w-full max-w-sm mb-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+<div id=${product?.id} class="w-full max-w-sm mb-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
     <a href="#">
         <div class="flex justify-center items-center w-full mt-2">
             <div class="w-[360px] h-[300px] flex items-center justify-center rounded-t-lg overflow-hidden">
@@ -37,7 +38,7 @@ export const generateTemplate = (products, defaultImgFile, container) => {
             </div>
         </div>
     </a>
-    <div class="px-5 pb-5">
+    <div class="px-8 pb-5 pt-8">
         <a href="#">
             <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">${product?.name || product?.title || 'Без названия'}</h5>
             <div class="text-md font-medium text-gray-900 mb-2">${product?.description ? product.description : 'Описание отсутствует'}</div>
@@ -61,16 +62,44 @@ export const generateTemplate = (products, defaultImgFile, container) => {
                     <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
                 </svg>
             </div>
-            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-sm dark:bg-blue-200 dark:text-blue-800 ms-3">${product?.rating || 0}</span>
+            <span class="bg-blue-100 text-blue-800 text-xs font-semibold 
+            px-2.5 py-0.5 rounded-sm dark:bg-blue-200
+             dark:text-blue-800 ms-3">${product?.rating || 0}
+             </span>
         </div>
-        <div class="flex items-center justify-between">
-            <span class="text-3xl font-bold text-gray-900 dark:text-white">${product.price ? '$' + product.price : ''}</span>
-            <a href="#" class="text-white bg-lime-700 hover:bg-lime-600 focus:ring-4 focus:outline-none focus:ring-lime-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to cart</a>
-        </div>
+
+       <button type="button" class="basket-btn text-white bg-lime-700 hover:bg-lime-500 focus:ring-4
+   focus:ring-lime-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-6
+    dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none
+     dark:focus:ring-blue-800">Add to</button>
+    
     </div>
 </div>
-            `
+`
+
         })
     }
-return container.insertAdjacentHTML('beforeend', template)
+ container.insertAdjacentHTML('beforeend', template)
+
+// функция получения каждой кнопки в карточке
+const allBtns = document?.querySelectorAll('.basket-btn')
+
+
+if (allBtns) {
+    allBtns.forEach((button) => {
+        button.addEventListener('click', (event) => {
+            // находим id карточки в иерархии DOM
+       const carId = event?.target?.parentElement?.parentElement?.id
+
+
+        //  находим элемент с id в массиве products
+    const product = products?.find((element) => element?.id === Number(carId))
+        console.log('найденый элемент', product)
+
+        // вызов функции для отрисовки полученного элемента на странице
+        return product
+
+        })
+    })
+}
 }

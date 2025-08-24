@@ -57,21 +57,21 @@
       "image": "help-image-7.jpg"
     },
     {
-      "name": "тумба ",
-      "rating": 5,
-      "price": 36,
-      "category": "PH",
-      "imgSrc": "https://krasnodar.anatomiyasna.ru/tovary/tumbochka-promtex-orient-tikki-renli-1/",
-      "description": "тумба прикроватная ",
+      "name": "доспехи",
+      "rating": 10,
+      "price": 500,
+      "category": "ph",
+      "imgSrc": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Bruce_brought_his_axe_crashing_down_upon_the_head_of_Bohun.jpg",
+      "description": "интерьер для дома",
       "id": 8
     },
     {
-      "name": "тумба",
-      "rating": 3,
-      "price": 55,
-      "category": "GA",
-      "imgSrc": "https://yandex.ru/images/search?from=tabbar&img_url=https%3A%2F%2Fmnogosna.ru%2Fupload%2Fiblock%2F3f4%2Fcrnfi95oiue3l6o3whfrapzh1of9ijx3%2FBez-imeni.jpg&lr=971&pos=16&rpt=simage&text=nev%2Cf",
-      "description": "тумба прикроватная",
+      "name": "dfg",
+      "rating": 55,
+      "price": 453,
+      "category": "tv",
+      "imgSrc": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Bruce_brought_his_axe_crashing_down_upon_the_head_of_Bohun.jpg",
+      "description": "hjkio",
       "id": 9
     }
   ]

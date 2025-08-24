@@ -15,12 +15,12 @@ import { createNewProduct } from './handlers.js'
   
   // вызываем сайдбар
   new Sidebar('#sidebar', '#sidebar-open')
-  // активируем обработчик формы добавления товара
+  // активируем обработчик форму добавления товара
   createNewProduct()
 
   })
 
+  console.log('basket-list', SELECTORS?.basketList)
 
 
-
-
+  
