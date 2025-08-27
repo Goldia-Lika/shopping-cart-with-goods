@@ -1,6 +1,3 @@
-// import { SELECTORS } from './selectors'
-// import { generateTemplate } from './card.js'
-
 //получаем продукты
 
 export async function getProducts() {
@@ -26,9 +23,7 @@ export async function createProduct (product){
       body: JSON.stringify(product),
     })
   if (!response.ok) throw new Error('Ошибка при добавлении продукта')
-  const data = await response.json()
-  console.log('api data', data)
-  return data
+  return await response.json()
   } catch (error) {
     console.error('Ошибка POST:', error)
     throw error     

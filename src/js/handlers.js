@@ -1,7 +1,6 @@
-import { SELECTORS } from './selectors'
+import { SELECTORS } from './global.js'
 import { createProduct } from './api'
-import { Notification } from './components/notification'
-import { generateTemplate } from './card.js'
+import { generateTemplate } from './templates.js'
 
 
 //Функция добавления товаров через форму (WIP)
@@ -33,7 +32,6 @@ export const createNewProduct = async ()=> {
   generateTemplate(await products, null, SELECTORS?.productsList)
       // можно очистить форму
       form.reset()
-     new Notification({title: 'Добавление товаров', subtitle: 'Товар был добавлен успешно' })
     })
   }
 }  
