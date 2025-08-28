@@ -1,7 +1,9 @@
 import { SELECTORS } from './global.js'
 import { createProduct } from './api'
 import { generateTemplate } from './templates.js'
-
+import { PRODUCTS_IN_BASKET } from './global'
+import { renderBasket } from './templates.js'
+import { Notification } from './components/notification.js'
 
 //Функция добавления товаров через форму (WIP)
 export const createNewProduct = async ()=> {
@@ -35,3 +37,28 @@ export const createNewProduct = async ()=> {
     })
   }
 }  
+
+// функция добавления товара в корзину без дублей
+export const addToBasket = (product) => {
+    const exists = PRODUCTS_IN_BASKET?.some(item => item?.id === product?.id)
+    if (!exists)   PRODUCTS_IN_BASKET.push(product)
+    renderBasket(PRODUCTS_IN_BASKET, SELECTORS?.basketList)
+
+new Notification({
+  title: 'Добавление товара',
+  subtitle: 'Товар успешно добавлен в корзину',
+})
+}
+
+// функция удаления товара из корзины
+export const  removeFromBasket = (carId) => {
+  const filteredProducts = PRODUCTS_IN_BASKET?.filter((item) => String(item?.id) !== carId)
+  PRODUCTS_IN_BASKET.length = 0;
+  PRODUCTS_IN_BASKET.push(...filteredProducts);
+  renderBasket(PRODUCTS_IN_BASKET, SELECTORS?.basketList)
+
+  new Notification({
+    title: 'Удаление товара',
+    subtitle: 'Товар успешно удален из корзины',
+  })
+}

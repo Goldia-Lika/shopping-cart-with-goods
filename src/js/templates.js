@@ -1,19 +1,5 @@
-// import { attachBtnHandlers } from './handlers'
-import { SELECTORS, PRODUCTS_IN_BASKET } from './global.js'
-import { Notification } from './components/notification'
+import { addToBasket, removeFromBasket } from "./handlers";
 
-
-// функция добавления товара в корзину без дублей
-function addToBasket(product) {
-    const exists = PRODUCTS_IN_BASKET?.some(item => item?.id === product?.id)
-    if (!exists)   PRODUCTS_IN_BASKET.push(product)
-    renderBasket(PRODUCTS_IN_BASKET, SELECTORS?.basketList)
-
-new Notification({
-  title: 'Добавление товара',
-  subtitle: 'Товар успешно добавлен в корзину',
-})
-}
 
 /**
  * Рендерит корзины товаров
@@ -89,8 +75,7 @@ export const renderBasket = (basketProducts, basketElement) => {
     button.addEventListener('click', (event) => {
       const card = event.target.closest('[data-id]')
       const carId = card?.getAttribute('data-id')
-      console.log('carId', carId)
-
+            
       if (carId) removeFromBasket(carId)
     })
   })
